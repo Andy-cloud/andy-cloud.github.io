@@ -13,6 +13,10 @@ h1 {
     font-family: 'Bangers', cursive;
     margin-right: 2%;
 }
+h1 a {
+    color: white;
+    text-decoration: none;
+}
 hr {
     width: 60%;
     margin: auto;
