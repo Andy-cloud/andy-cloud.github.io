@@ -91,9 +91,9 @@ nav ul li a {
     font-size: 5vw;
     color: #006699;
 }
-li.active a {
+.active {
     background-color: black;
-    transition: 0.3 ease background-color;
+    transition: 0.3 ease ;
     color: white;
 }
 #top-bar {
@@ -188,6 +188,7 @@ th, td {
         display: block;
         color: white;
         background-color: #006699;
+        width: -moz-fit-content;
         width: fit-content;
         padding: 1%;
         border-bottom-right-radius: 10px;  
