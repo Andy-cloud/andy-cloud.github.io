@@ -1,6 +1,6 @@
 html {
     scroll-behavior: smooth;
-    font-family:Arial, Helvetica, sans-serif;
+    font-family: 'Oswald', sans-serif;
 }
 * {
     padding: 0;
@@ -8,55 +8,224 @@ html {
 }
 h1 {
     color: white;
+    font-weight: 500;
+    font-size: 48px;
+    font-family: 'Bangers', cursive;
+    margin-right: 2%;
+}
+hr {
+    width: 60%;
+    margin: auto;
+    color: #004466;
+    border: 0; 
+    background-image: linear-gradient(to right, #f0f0f0,#006699, #004466, #006699, #f0f0f0);
+    border: none;
+    height: 1px;
 }
 
-section {
-    height: 100vh;
-    border-bottom: 1px solid gray;
-}
-header {
-    background-color:  #006699;
-    width: 50vh;
-}
 body {
+    
     background-color:  white;
 
 }
-#header-content {
-    position: fixed;
-    margin-top: 2vh;
-    padding-left: 10vh;
-    text-align: center; 
+header {
+    position: sticky;
+    left: 0;
+    top: 0;
+    height: 95vh;
+    background-color:  #006699; 
+    width: 20vw;
+    padding-left: 5vw;
+    
+    padding-top: 5vh;
+    grid-row: 1;
+    grid-column: 1;
+
 }
 nav {
     margin-top: 20vh;
 }
 nav ul {
     list-style: none;
+    width: 100%;
     
 }
 nav ul li {
-    margin-bottom: 10vh;
-    background-color: white;
-    border-radius: 10px;
-    opacity: 70%;
+    margin-bottom: 4vh;
+    
+    text-align: center;
+
 }
-nav ul li:hover {
+nav ul li a:hover {
+    color: white;
     opacity: 100%;
     background-color: #004466;
-}
-nav ul li:hover a {
-    color: white;
 }
 nav ul li a {
     text-decoration: none;
     color: #006699;
     font-size: larger;
     font-weight: bold;
-    padding: 10vh;
+    background-color: white;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    opacity: 70%;
+    padding: 1vh 0;
+    display: block;
+    
 
 }
 .grid-content{
+    display: grid;
+    grid-template-columns: 2fr 8fr;
+}
+.container {
+    grid-row: 1;
+    grid-column: 2;
+}
+.container h2{
+    font-family: 'Archivo Black', sans-serif;
+    text-align: center;
+    padding-top: 2%;
+    font-weight: bold;
+    font-size: 5vw;
+    color: #006699;
+}
+li.active a {
+    background-color: black;
+    transition: 0.3 ease background-color;
+    color: white;
+}
+#top-bar {
+    display: none;
+}
+#close-nav {
+    display: none;
+}
+.content {
+    margin-left:5%;
+    margin-right: 5%;
+    margin-top: 2%;
+    display: inline-block;    
+}
+#about .content p img {
+    padding: 2%;
+}
+#about .content p:nth-child(even) img {
+    float: right;
+    width: 15vh;
+    height: auto;
+}
+#about .content p:nth-child(even) {
+    text-align: left;
+    
+}
+#about .content p:nth-child(odd) img {
+    float: left;
+    width: 20vh;
+    height: auto;
+}
+#about .content p:nth-child(odd) {
+    text-align: right;
+    
+}
+#about .content p {
+    margin: 5% 0;
+}
+table {
+    table-layout: fixed;
+    width: 100%;
+    border-collapse: collapse;
+  }
+th, td {
+    border-bottom: 1px solid #006699;
+    padding: 2%;
+    text-align: center;
+}
+#experience img{
+    width: 50px;
+    margin: 2%;
+    height: auto;
+    flex: 10%;
+    max-width: 10%;
+}
+#experience .content{
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
+    
+}
+#interests .content {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 4px;
+
+  }
+  
+  #interests img {
+    vertical-align: middle;
+    width: 100%;
+  }
+@media screen and (max-width: 800px) {
+
+    header {
+        height: 100vh;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: #006699;
+        overflow-x: hidden;
+        transition: 0.5s;
+
+        padding: 0;
+      }
+      .grid-content{
+        display: block;
+    }
+    #top-bar {
+        display: block;
+        color: white;
+        background-color: #006699;
+        width: fit-content;
+        padding: 1%;
+        border-bottom-right-radius: 10px;  
+        font-size: 5vw;  
+        position: fixed;
+    }
+    #close-nav {
+        display: block;
+        color: white;
+        text-align: right;
+        margin-right: 2%;
+        font-size: 5vh;
+    }
+    #experience img{
+        flex: 25%;
+        max-width: 25%;
+    }
+    #interests .content {
+        grid-template-columns: 1fr;
+    }
+    
+}
+@media screen and (min-width:1900px) {
+    .container h2 {
+        font-size: 3vw;
+    }
+    header {
+        width: 15vw;
+    }
+
+    #about .content p:nth-child(even) img {
+        width: 5vw;
+    }
+    #about .content p:nth-child(odd) img {
+        width: 10vw;
+    }
+    #experience img{
+        flex: 5%;
+        max-width: 5%;
+    }
 }

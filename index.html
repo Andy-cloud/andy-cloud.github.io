@@ -2,39 +2,155 @@
 <html lang="cs">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <script src="script.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bangers&family=Oswald&display=swap" rel="stylesheet">
+    <script>
+        function openNav() {
+            document.getElementById("side-nav").style.width = "50vw";
+            document.getElementById("side-nav").style.paddingLeft = "5vw";
+            document.getElementById("side-nav").style.paddingTop = "5vh";
+        }
+          
+        function closeNav() {
+            document.getElementById("side-nav").style.width = "0";
+            document.getElementById("side-nav").style.padding = "0";
+        }
+        function resize() {
+            if (window.innerWidth > 801) {
+                if (window.innerWidth > 1900) {
+                    document.getElementById("side-nav").style.width = "15vw";
+                    document.getElementById("side-nav").style.paddingLeft = "5vw";
+                    document.getElementById("side-nav").style.paddingTop = "5vh";
+                } else {
+                    document.getElementById("side-nav").style.width = "20vw";
+                    document.getElementById("side-nav").style.paddingLeft = "5vw";
+                    document.getElementById("side-nav").style.paddingTop = "5vh";
+                }
+                
+            } else {
+                document.getElementById("side-nav").style.width = "0";
+                document.getElementById("side-nav").style.padding = "0";
+            }
+        }
+        const sections = document.getElementsByName('section');
+        console.log(sections);
+        const navLi = document.querySelectorAll('header nav ul li');
+        window.addEventListener('scroll', ()=> {
+            let current = '';
+            
+            sections.forEach( section => {
+                const sectionTop = section.offsetTop;
+                console.log(sectionTop);
+            });
+        })
+    </script>
     <title>Ondřej Darmopil - Life</title>
 </head>
-<body>
+<body onresize="resize()">
     <div class="grid-content">
-        <header>
-            <div id="header-content">
-                <h1>Ondra</h1>
-                <nav>
-                    <ul>
-                        <li><a href="#about">O mně</a></li>
-                        <li><a href="#experience">Zkušenosti</a></li>
-                        <li><a href="#education">Školy</a></li>
-                        <li><a href="#interests">Zájmy</a></li>
-                    </ul>
-                </nav>
-            </div>
+        <div id="top-bar">
+            <span onclick="openNav()">&#9776; menu</span>
+        </div>
+        <header id="side-nav">
+            <span onclick="closeNav()" id="close-nav">&times;</span>
+            <h1>Ondřej Darmopil</h1>
+            <nav>
+                <ul>
+                    <li><a href="#about">O mně</a></li>
+                    <li><a href="#experience">Zkušenosti</a></li>
+                    <li><a href="#education">Školy</a></li>
+                    <li><a href="#interests">Zájmy</a></li>
+                </ul>
+            </nav>
         </header>
-        <div class="content">
+        <div class="container">
             <section id="about">
-                <h2>O mně</h2>
+                <h2>O MNĚ</h2>
+                <hr>
+                <div class="content">
+                    <p>
+                        <img src="imgs/1.png" />
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio quis amet placeat alias accusamus dignissimos culpa? Ducimus hic aperiam tempore odio sequi qui, vitae illum optio officia rerum, explicabo eligendi!
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem cum soluta in incidunt fuga omnis mollitia vero assumenda voluptate vitae. Sequi assumenda deserunt praesentium recusandae sit dolore dolor corporis voluptatem.
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Similique harum, voluptate atque commodi quaerat, officia esse sed quo, ea exercitationem explicabo laudantium perferendis fugit inventore eligendi aliquid quidem? Facere, fugiat?
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem accusantium ea eum dignissimos, molestias excepturi recusandae dolor molestiae, incidunt, minima a. Numquam, possimus omnis consectetur odio eaque quasi animi nisi?
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus nemo repudiandae nisi, quo dolorum itaque nam accusantium, ea voluptatem, officia enim magni. Fugit tenetur repudiandae iste labore fuga neque necessitatibus.
+
+                    </p>
+                    <p>
+                        <img src="imgs/profile_solo.png" />
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio quis amet placeat alias accusamus dignissimos culpa? Ducimus hic aperiam tempore odio sequi qui, vitae illum optio officia rerum, explicabo eligendi!
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem cum soluta in incidunt fuga omnis mollitia vero assumenda voluptate vitae. Sequi assumenda deserunt praesentium recusandae sit dolore dolor corporis voluptatem.
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Similique harum, voluptate atque commodi quaerat, officia esse sed quo, ea exercitationem explicabo laudantium perferendis fugit inventore eligendi aliquid quidem? Facere, fugiat?
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem accusantium ea eum dignissimos, molestias excepturi recusandae dolor molestiae, incidunt, minima a. Numquam, possimus omnis consectetur odio eaque quasi animi nisi?
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus nemo repudiandae nisi, quo dolorum itaque nam accusantium, ea voluptatem, officia enim magni. Fugit tenetur repudiandae iste labore fuga neque necessitatibus.
+
+                    </p>
+                </div>
             </section>
             <section id="experience">
-                <h2>Zkušenosti</h2>
+                <h2>ZKUŠENOSTI</h2>
+                <hr>
+                <div class="content">
+                    <img src="imgs/c-.png">
+                    <img src="imgs/css-3.png">
+                    <img src="imgs/html-5.png">
+                    <img src="imgs/java.png">
+                    <img src="imgs/js.png">
+                    <img src="imgs/letter-c.png">
+                    <img src="imgs/photoshop.png">
+                    <img src="imgs/php.png">
+                    <img src="imgs/python.png">
+                    <img src="imgs/react.png"> 
+                </div>
             </section>
             <section id="education">
-                <h2>Školy</h2>
+                <h2>ŠKOLY</h2>
+                <hr>
+                <div class="content">
+                    <table id="school">
+                        <thead>
+                            <tr>
+                                <th>Rok</th>
+                                <th>2007 - 2016</th>
+                                <th>2016 - 2020</th>
+                                <th>2020 - nyní</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>Typ školy</th>
+                                <td>Zákládní škola</td>
+                                <td>Střední škola</td>
+                                <td>Vysoká škola</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </section>
             <section id="interests">
-                <h2>Zájmy</h2>            
+                <h2>ZÁJMY</h2>            
+                <hr>
+                <div class="content">
+                    
+                    <img src="imgs/moto3.jpg">
+                    <img src="imgs/moto1.jpg">
+                    <img src="imgs/moto2.jpg">
+                    <img src="imgs/img_2.jpg">
+                    <img src="imgs/img_3.jpg">
+                    <img src="imgs/img_4.jpg">
+                    <img src="imgs/img_5.jpg">
+                    <img src="imgs/moto4.jpg">
+                    <img src="imgs/img_8.jpg">
+                    <img src="imgs/img_1.jpg">
+                    <img src="imgs/moto5.jpg">
+                    <img src="imgs/img_7.jpg">
+                    
+                      
+                </div>
             </section>
         </div>
     </div>
